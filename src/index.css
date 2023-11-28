@@ -237,3 +237,63 @@ body {
     transform: scale(1);
   }
 }
+/* //cart */
+.offcanvas {
+  background-color: #fff; /* Set a background color */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+}
+
+/* Style for the table */
+.table {
+  margin-bottom: 0; /* Remove default bottom margin */
+  width: 100%; /* Make the table fill the entire width */
+}
+
+/* Style for table header */
+.table thead th {
+  background-color: #f8f9fa; /* Light background color for header */
+}
+
+/* Style for table rows */
+.table tbody tr {
+  border-bottom: 1px solid #dee2e6; /* Add a border between rows */
+}
+
+/* Style for total section */
+.text-end {
+  font-size: 1.2rem;
+  color: #007bff; /* Set a color for the total amount */
+}
+
+/* Style for Remove button */
+.btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+/* Style for Purchase button */
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+/* Additional styles for layout and spacing */
+.m-auto {
+  margin: auto;
+}
+
+.mt-5 {
+  margin-top: 10px; /* Increase top margin */
+}
+.but{
+  background-color: red;
+  border-radius: 50%;
+  padding: 0.3rem 0.6rem;
+  color: #fff;
+  font-size: 0.8rem;
+  border: none;
+  cursor: pointer;
+  
+}
+
+

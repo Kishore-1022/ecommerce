@@ -30,7 +30,7 @@ function App() {
 
   const getHandlder=async()=>{
     try{
-      const res= await fetch(`https://crudcrud.com/api/4d8d1910515042cebdc33245837ceee6/${updated}`)
+      const res= await fetch(`https://crudcrud.com/api/9375afc638b44245a7f210cd4244b7cb/${updated}`)
       const data= await res.json()
       count(data)   
     }catch(err){

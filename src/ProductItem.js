@@ -16,7 +16,7 @@ const ProductItem = (props) => {
     const fetchHandler=async()=>{ 
       setCartBump(true); 
       try{
-      const res= await fetch(`https://crudcrud.com/api/4d8d1910515042cebdc33245837ceee6/${updated}`,{
+      const res= await fetch(`https://crudcrud.com/api/9375afc638b44245a7f210cd4244b7cb/${updated}`,{
         method: "POST",
         body: JSON.stringify(items),
         headers:{'Content-Type':'application/json'}

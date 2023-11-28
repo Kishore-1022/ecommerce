@@ -25,7 +25,7 @@ import { useNavigate } from 'react-router-dom';
   
   const getHandlder=async()=>{
     try{
-      const res= await fetch(`https://crudcrud.com/api/4d8d1910515042cebdc33245837ceee6/${updated}`)
+      const res= await fetch(`https://crudcrud.com/api/9375afc638b44245a7f210cd4244b7cb/${updated}`)
       const data= await res.json()
   
       setCartItems(data)  ;
@@ -39,7 +39,7 @@ import { useNavigate } from 'react-router-dom';
   const remover=async(id)=>{
   
     try{
-      const res= await fetch(`https://crudcrud.com/api/4d8d1910515042cebdc33245837ceee6/${updated}/${id}`,{
+      const res= await fetch(`https://crudcrud.com/api/9375afc638b44245a7f210cd4244b7cb/${updated}/${id}`,{
         method: "DELETE",
       })
       setCartItems((prev) => prev.filter((item)=>item._id !== id))
@@ -53,7 +53,7 @@ import { useNavigate } from 'react-router-dom';
 
   return (
     <>
-     <Offcanvas  show={cart} onHide={handleClose} placement="end" >
+     <Offcanvas  show={cart} onHide={handleClose} placement="end">
         <Offcanvas.Header closeButton>
           <Offcanvas.Title className='fs-3 fw-bolder m-auto'>CART ITEMS</Offcanvas.Title>
         </Offcanvas.Header>
@@ -61,7 +61,7 @@ import { useNavigate } from 'react-router-dom';
            <table class="table table-borderless">
               <thead>
                 <tr>
-                  <th scope="col">Item</th>
+                  <th scope="col" className='text-center'>Item</th>
                   <th scope="col">Price</th>
                   <th scope="col">Quantity</th>
                 </tr>
@@ -70,14 +70,16 @@ import { useNavigate } from 'react-router-dom';
               {cartItems.map((i,index)=>(
                 <tr >   
                   <td className='d-flex '>
-                    <div>{index+1}</div>
                     <img src={i.img1} alt="" width='50px' height='50px' />
                     <div>{i.name}</div>
                   </td>
                   <td >{i.price}</td>
-                  <td className='d-flex  m-1'>
+                  <td className='text-center'>
                     <div>{i.quantity}</div>
-                    <Button variant='danger' onClick={()=>remover(i._id)}>Remove</Button>
+                    
+                  </td>
+                  <td >        
+                  <button  className='but' onClick={() => remover(i._id)}>X</button>
                   </td>
                 </tr>
                  ))}
