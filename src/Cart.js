@@ -1,10 +1,59 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Offcanvas,Button } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
  const Cart = (props) => {
+  const [cartItems,setCartItems]=useState([]);
+  const [total,setTotal]=useState(0)
+  const navigate=useNavigate()
+ 
+  const [cart,setCart]=useState(false)
+ 
+  const email=localStorage.getItem('email')
+  const updated=email.replace('@gmail.com', '');
+
+  useEffect(()=>{
+    getHandlder()
+    setCart(true)
+  },[])
+
+  const handleClose=()=>{
+    setCart(false)
+    navigate('/list')
+  }
+
+  
+  const getHandlder=async()=>{
+    try{
+      const res= await fetch(`https://crudcrud.com/api/4d8d1910515042cebdc33245837ceee6/${updated}`)
+      const data= await res.json()
+  
+      setCartItems(data)  ;
+      const count= data.reduce((acc,item)=>acc+ item.quantity*item.price,0);
+      setTotal(count)
+     
+     }catch(err){
+       console.log(err.message)
+     }
+  }
+  const remover=async(id)=>{
+  
+    try{
+      const res= await fetch(`https://crudcrud.com/api/4d8d1910515042cebdc33245837ceee6/${updated}/${id}`,{
+        method: "DELETE",
+      })
+      setCartItems((prev) => prev.filter((item)=>item._id !== id))
+      const count = cartItems.reduce((acc,item)=> acc + item.quantity*item.price,0);
+      setTotal(count)
+      props.getHandlder()
+      }catch(err){
+        console.log(err.message)
+      }
+  }
+
   return (
     <>
-     <Offcanvas show={props.show} onHide={props.handleClose} placement="end" >
+     <Offcanvas  show={cart} onHide={handleClose} placement="end" >
         <Offcanvas.Header closeButton>
           <Offcanvas.Title className='fs-3 fw-bolder m-auto'>CART ITEMS</Offcanvas.Title>
         </Offcanvas.Header>
@@ -18,7 +67,7 @@ import { Offcanvas,Button } from 'react-bootstrap';
                 </tr>
               </thead>
               <tbody>
-              {props.cart.map((i,index)=>(
+              {cartItems.map((i,index)=>(
                 <tr >   
                   <td className='d-flex '>
                     <div>{index+1}</div>
@@ -28,19 +77,15 @@ import { Offcanvas,Button } from 'react-bootstrap';
                   <td >{i.price}</td>
                   <td className='d-flex  m-1'>
                     <div>{i.quantity}</div>
-                    <Button variant='danger' onClick={()=>props.remover(i.id)}>Remove</Button>
+                    <Button variant='danger' onClick={()=>remover(i._id)}>Remove</Button>
                   </td>
                 </tr>
                  ))}
               </tbody>
-            </table>  
-         
-            
-          <div className='w-100 text-end mt-1 fw-bolder'>Total: 0</div>
-          <Button className='mt-5 w-100'>Purchase</Button>
-         
-        </Offcanvas.Body>
-       
+            </table>     
+          <div className='w-100 text-end mt-1 fw-bolder'>Total:{total} </div>
+          <Button className='mt-5 w-100'>Purchase</Button>      
+        </Offcanvas.Body>    
       </Offcanvas>
     </>
   )

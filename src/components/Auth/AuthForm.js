@@ -37,14 +37,13 @@ const AuthForm = () => {
           password:updatedPassword,
           returnSecureToken: true
         }),
-        headers:{
-          'Content-Type':'application/json'
-        }
+        headers:{'Content-Type':'application/json'}
       })
       SetIsLoading(false)
-      if (res.ok){
+      if (res){
         const data = await res.json() 
         authCtx.login(data.idToken)
+        localStorage.setItem('email',data.email)
         history('/')
       }else{
         const data = await res.json()      

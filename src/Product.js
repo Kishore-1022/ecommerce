@@ -6,9 +6,9 @@ export const products=[
             price:79900,
             quantity:1,
             rating:4.6,
-            img1:'https://cdn.zeebiz.com/hindi/sites/default/files/2023/09/01/152102-iphone15pro-red.jpg?im=FitAndFill=(1200,900)',
-            img2:'https://www.apple.com/newsroom/images/2023/09/apple-unveils-iphone-15-pro-and-iphone-15-pro-max/tile/Apple-iPhone-15-Pro-lineup-hero-230912.jpg.og.jpg?202311010242',
-            img3:'https://img-prd-pim.poorvika.com/product/Apple-iphone-15-pro-blue-titanium-128gb-Front-Back-View.png',
+            img1:'https://m.media-amazon.com/images/I/81dT7CUY6GL._SX679_.jpg',
+            img2:'https://m.media-amazon.com/images/I/71TSx9D2BVL._SX679_.jpg',
+            img3:'https://m.media-amazon.com/images/I/61Jrsu9d3-L._SX679_.jpg',
         },
         {
             id:2,
@@ -45,10 +45,44 @@ export const products=[
             name:'APPLE AirPods Pro',
             price:24400,
             rating:4.1,
-            img1:'https://www.apple.com/v/airpods-pro/i/images/meta/og__eui2mpgzwyaa_overview.png?202311140630',
+            quantity:1,
+            img1:'https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/MME73?wid=445&hei=445&fmt=jpeg&qlt=95&.v=1632861342000',
             img2:'https://tienda.bananacomputer.com/cms/uploads/webp/812F91CA-C545-4ECA-BE5E-A9A4A25E1FB3-750-rhuwvr.webp',
             img3:'https://media.studio7thailand.com/76563/Apple-Acc-AirPods-Pro-(2nd-generation)-1-square_medium.jpg',
         },
+        {
+            id:6,
+            name:'APPLE MagSafe Battery Pack',
+            price:4999,
+            rating:4.6,
+            quantity:1,
+            img1:'https://unione.co.in/cdn/shop/products/9494.jpg?v=1662119250&width=1471.656&height=1471.656',
+            img2:'https://dimensiva.com/wp-content/uploads/edd/2021/07/magsafe-battery-pack-by-apple.jpg',
+            img3:'https://www.aptronixindia.com/media/catalog/product/cache/31f0162e6f7d821d2237f39577122a8a/m/j/mjwy3-2-removebg-preview.png',
+        },
+        {
+            id:7,
+            name:'APPLE TV 4K',
+            price:497599,
+            rating:4.8,
+            quantity:1,
+            img1:'https://m.media-amazon.com/images/I/816DD5Kg7mL._SL1500_.jpg',
+            img2:'https://m.media-amazon.com/images/I/81oEIytsw8L._SL1500_.jpg',
+            img3:'https://m.media-amazon.com/images/I/41LpF5n38kL._SL1024_.jpg',
+        },
+        {
+            id:8,
+            name:'APPLE HomePod',
+            price:32900,
+            rating:4.3,
+            quantity:1,
+            img1:'https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/homepod-select-midnight-202210?wid=470&hei=556&fmt=png-alpha&.v=1670557210097',
+            img2:'https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/homepod-select-white-202210?wid=470&hei=556&fmt=png-alpha&.v=1670557209531',
+            img3:'https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/homepod-mini-select-spacegray-202110_FV1?wid=934&hei=440&fmt=jpeg&qlt=95&.v=1633086020000',
+        }
+
+
+        
     ]
   
 

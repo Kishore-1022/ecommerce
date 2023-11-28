@@ -1,11 +1,17 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Amazon Ember', Arial, sans-serif;
+  line-height: 1.6;
+  color: #111;
 }
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+a {
+  color: #007185;
+  text-decoration: none;
+}
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -27,4 +33,207 @@ code {
 li{
   list-style: none;
   border-bottom: 1px solid black;
+}
+.mx-2 {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* /products css */
+
+.product-container {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+
+.carousel {
+  width: 100%;
+}
+
+.button-container {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.product-details {
+  margin: 2rem 0;
+}
+
+.offers {
+  margin-top: 1rem;
+}
+
+.reviews {
+  margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  .mx-2 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-container {
+    width: 100%;
+  }
+}
+
+/* About css */
+
+
+.about-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+}
+
+.about-img {
+  max-width: 300px;
+  border-radius: 8px;
+  margin-right: 20px;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-heading {
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+  }
+
+  .about-img {
+    margin-bottom: 20px;
+  }
+}
+
+/* Contact Us css */
+
+.contact-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  font-weight: bold;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.submit-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+  .contact-container {
+    margin: 20px auto;
+    padding: 10px;
+  }
+}
+
+/* Product.css */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  background-color: #343a40; /* Bootstrap secondary background color */
+  padding: 10px;
+}
+
+.tes {
+  margin: 0;
+}
+
+/* Additional styles for the product cards */
+.card {
+  width: 14rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card-title {
+  font-size: 1.2rem;
+}
+
+.card-img-top {
+  width: 100%;
+  height: auto;
+}
+
+.card-text {
+  font-size: 1rem;
+}
+
+.font-italic {
+  font-style: italic;
+}
+
+.fs-2 {
+  font-size: 2rem;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+  .card {
+    width: 100%;
+  }
+}
+
+.bump-animation {
+  animation: bumpAnimation 0.5s ease-out;
+}
+
+@keyframes bumpAnimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
 }

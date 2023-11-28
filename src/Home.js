@@ -1,5 +1,4 @@
 import React, { useCallback, useEffect, useState } from 'react'
-
 import Details from './Details';
 import { Button, Navbar,Container,ListGroup,Spinner,CloseButton } from 'react-bootstrap'
 
@@ -7,8 +6,7 @@ const Home = () => {
     const [list,setList]=useState([])
     const [err,setErr]=useState()
 
-      const  fetchHandler=useCallback(async()=>{
-       
+      const  fetchHandler=useCallback(async()=>{ 
             try{
                 const response= await fetch('https://react-works-d3482-default-rtdb.asia-southeast1.firebasedatabase.app/movies.json')
                 const data= await response.json()
@@ -72,9 +70,6 @@ const Home = () => {
         ))} 
         {err?<p className='text-center fs-5 fw-bolder'>{err}</p>:!err&&list.length==0?<p className='text-center fs-5 fw-bolder'>Loading<Spinner animation="border" variant="danger"  size="sm"/></p>:''}
       </ListGroup>
-     
-      
-      
     </>
   )  
 }

@@ -26,33 +26,31 @@ const Contact = () => {
             phone:phone.current.value,
         }
         file(formList)
-        name.current.value=''
-        email.current.value=''
-        phone.current.value=''
-        
-
-    }
+        e.target.reset();
+    };
   return (
-    <>
-     <Form className="mx-4 my-2" onSubmit={formHandler}>
-        <Form.Group className="mb-3" >
-            <Form.Label>Name</Form.Label>
-            <Form.Control type="text" placeholder="name" ref={name}  />
-        </Form.Group>
-      <Form.Group className="mb-3" >
-        <Form.Label>Email address</Form.Label>
-        <Form.Control type="email" placeholder="name@example.com"  ref={email} />
+    <div className='contact-container'>
+    <Form onSubmit={formHandler}>
+      <Form.Group className='form-group'>
+        <Form.Label className='form-label'>Name</Form.Label>
+        <Form.Control type='text' placeholder='Enter your name' ref={name} />
       </Form.Group>
-      <Form.Group className="mb-3" >
-        <Form.Label>Phone No.</Form.Label>
-        <Form.Control type="number" placeholder="+91"  ref={phone} />
+      <Form.Group className='form-group'>
+        <Form.Label className='form-label'>Email address</Form.Label>
+        <Form.Control type='email' placeholder='Enter your email' ref={email} />
       </Form.Group>
-      <div className='text-end'><Button size='lg' type='submit'> Submit</Button></div>
-      
-     
+      <Form.Group className='form-group'>
+        <Form.Label className='form-label'>Phone No.</Form.Label>
+        <Form.Control type='number' placeholder='Enter your phone number' ref={phone} />
+      </Form.Group>
+      <div className='text-end'>
+        <Button className='submit-button' size='lg' type='submit'>
+          Submit
+        </Button>
+      </div>
     </Form>
-    </>
-  )
-}
+  </div>
+);
+};
 
 export default Contact
